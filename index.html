@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name ="viewport"content="width=device-width, initial-scale=1">
+	<title>Portfolio</title>
+	<link rel="shortcut icon" type="image/ico" href="icon.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald&family=Raleway:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+	<link id="theme" rel="stylesheet" href="light-theme.css">
+	
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		//for nightmode/lightmode switching....
+
+	document.addEventListener('DOMContentLoaded', () => {
+
+    const themeStylesheet = document.getElementById('theme');
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+        // if it's light -> go dark
+        if(themeStylesheet.href.includes('light')){
+            themeStylesheet.href = 'dark-theme.css';
+            themeToggle.innerText = 'Light';
+        } else {
+            // if it's dark -> go light
+            themeStylesheet.href = 'light-theme.css';
+            themeToggle.innerText = 'Dark';
+        }
+    })
+
+	//Get the button
+var mybutton = document.getElementById("scrolltotop");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+$('#scrolltotop').on('click', ()=>{
+	document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+})
+
+
+
+})	
+		document.addEventListener('DOMContentLoaded', () => {
+
+		//for nav links for mobile....
+		const linefornav = document.getElementById("linefornav");
+		const navlinks = document.getElementById("nav-links");
+		const links = document.getElementById("nav-links li");
+		
+
+		linefornav.addEventListener('click', () => {
+			navlinks.classList.toggle("open");
+		});
+		$('#nav-links li a').on('click' , ()=>{
+			$('#nav-links').toggleClass("open");
+		});
+
+
+
+	});
+
+
+	</script>
+	
+	<style>
+		
+		
+	</style>
+</head>
+<body id="top">
+<!-- ********HEADER***************-->
+<!--<div class="header">-->
+	<!--<p>Mode : <button id="theme-toggle">Dark</button></p>
+	<h2><a id="logoicon" href="#top"><img style="width: 60px;height: 60px;" src="icon.ico" alt="Dnyaneshwar Sakhare Logo"></a></h2>-->
+	<nav>
+		<div class="linefornav" id="linefornav">
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+		</div>
+
+		<ul class="nav-links" id="nav-links">
+			<li><p>Mode : <button id="theme-toggle">Dark</button></p></li>
+	        <li><h2><a id="logoicon" href="#top"><img style="width: 60px;height: 60px;" src="icon.ico" alt="Dnyaneshwar Sakhare Logo"></a></h2></li>
+	        
+			<li><a href="#top"> Home</a></li>
+			<li><a href="#about"> About Me</a></li>
+			<li><a href="#Skills"> Skills</a></li>
+			<li><a href="#portfolio"> Portfolio</a></li>
+			<li><a href="#contact"> Contact Me</a></li>
+		
+		</ul>
+
+	</nav>
+
+<!--</div>-->
+
+
+<!-- ********HOMEPAGE***************-->
+	<div id="hero">
+		<div class="background-image"></div>
+		<h1>Hello, I'm a Software Developer</h1>
+		<h3>I love playing with Html, Css and Javascript with programming knowledge of C, C++, Java & more.</h3>
+		<a href="#about" style="font-family: 'Josefin Sans', sans-serif;" class="btn">Know More</a>
+		
+		<p id="scrolltotop" title="Go to top">Scroll to Top</p>		
+		
+
+	</div>
+	<!-- ********About***************-->
+	<div id="about" class="about">
+		<h3 class="title">About Me</h3>
+		<div id="two-cols">
+		<div class="about-image"><img style="border-radius: 50%;" src="DnyaneshwarSakhare1.jpg" alt="Dnyaneshwar sakhare image"></div>
+		<div class="about-bio">
+			<p>
+				I'm Dnyaneshwar Sakhare & i'm a Student at Rit, Sangli. I have knowledge of Frontend technologies also i have started learning React js framework. I can create Databases with sql and also with NoSql Firebase. I know some Backend Technologies like node.js and trying to deploy real time projects. I have done certification course on Software Development Life Cycle and Digital Marketing. Other than this i really like to developing games using Unity 3D.
+			</p>
+		</div>
+				<p>&nbsp;</p>
+	</div><hr>
+	</div>
+	<!-- ********Skills**************-->
+		<div id="Skills" class="Skills">
+			<h3 class="title">Skills</h3>
+				<p style="margin-bottom: 40px;">
+				Customer Service Representative with 8 years' experience. Extremely strong leadership skills. Excellent interpersonal skills. Have worked in two high-volume call centers. Trained in SalesForce.
+			</p><hr>
+			<ul class="grid">
+				<li><i></i><h4 class="textskill">Front-End</h4><p>Interest in Developing Gui with Html, Css & Javascript</p></li>
+				<li><i></i><h4 class="textskill">Back-End</h4><p>Playing with Databases, Sql and Node.js</p></li>
+				<li><i></i><h4 class="textskill">SW-Dev</h4><p>With the Concepts of SDLC, Agile SD, Lean SD Concepts </p></li>
+				<li><i></i><h4 class="textskill">Game-Dev</h4><p>Making games using Unity 3D & C# is always inspires me</p></li>
+			</ul>
+		</div><hr>
+
+
+	<!-- *********Portfolio**************-->
+	<div id="portfolio" class="portfolio">
+		<h3 class="title">Portfolio</h3>
+		<p>
+			Take a look at my Featured works.
+		</p>
+		<hr>
+		<ul  style="justify-content: center;" class="grid">
+			<li class="small" style="background-image: url('about.jpg');position: relative;"><a style="position: absolute;top: 90%;left: 50%;transform: translate(-50%, -50%);" href="#about" class="btn" id="eeee">Open</a></li>
+			<li class="large" style="background-image: url('bgr.jpg');position: relative;"><a style="position: absolute;top: 90%;left: 50%;transform: translate(-50%, -50%);" href="#about" class="btn" id="eeee">Open</a></li>
+			<li class="large" style="background-image: url('bgr.jpg');position: relative;"><a style="position: absolute;top: 90%;left: 50%;transform: translate(-50%, -50%);" href="#about" class="btn" id="eeee">Open</a></li>
+			<li class="small" style="background-image: url('about.jpg');position: relative;"><a style="position: absolute;top: 90%;left: 50%;transform: translate(-50%, -50%);" href="#about" class="btn" id="eeee">Open</a></li>
+		</ul>
+	</div>
+	<hr>
+
+	<!-- *********CONTACT**************-->
+	<div><h3 class="title">Contact Me</h3></div>
+	<div id="contact">
+			<ul class="grid">
+				<li><i style="font-size: 30px;color:  #2196f3;" class="fa fa-location-arrow" aria-hidden="true"></i><br><br><p>Barsh road, MIDC<br>
+				Latur, 413512 MH<br>
+				India.</p></li>
+				<li><i style="font-size: 30px;color:  #2196f3;" class="fa fa-envelope-open"></i><br><br><p>dnyaneshwarsakhare22@gmail.com</p></li>
+			</ul>
+	</div><hr>
+
+
+
+
+
+	<!--<div id="contact">
+		<h3 class="title">Contact Me</h3>
+		<section style="text-align: center;" class="flexbox-section">
+			<p>
+				<i style="font-size: 30px;color:  #2196f3;" class="fa fa-location-arrow" aria-hidden="true"></i>
+			</p>
+			<br>
+			<p>
+				Barsh road, MIDC<br>
+				Latur, 413512 MH<br>
+				India.
+			</p>
+		</section>
+	</div><hr>-->
+
+
+	<!-- *********FOOTER**************-->
+	<div style="text-align: center;">
+		<a href="Dnyaneshwar_Sakhare_CV.pdf" download="CV" target="_blank" class="btn" id="cv">Download CV</a>
+	</div>
+
+	<hr>
+	<!-- *********FOOTER**************-->
+	<footer id="social-media">
+		<ul>
+			<li><a href="https://twitter.com/dnyaneshwar_s22" target="_blank"><i class="fab fa-twitter"></i></a></li>
+			<li><a href="https://www.instagram.com/dnyaneshwar_s22/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+			<li><a href="https://in.linkedin.com/in/dnyaneshwar-sakhare" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+			<li><a href="https://github.com/Dnyaneshwarsakhare/" target="_blank"><i class="fab fa-github"></i></a></li>
+			<li><a href="mailto:dnyaneshwarsakhare22@gmail.com?subject=Hello, I'm ...&body=I have a job for you...." target="_blank"><i class="far fa-envelope"></i></a></li>
+		</ul>
+		<p>Thank you for visiting !</p>
+		<p>&ldquo; Believe In Yourself &rdquo;</p>
+		<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Made with <span style="color: red"class="heart">❤</span> by Dnyaneshwar Sakhare </p>	
+	</footer>
+
+</body>
+</html>
