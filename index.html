@@ -4,74 +4,161 @@
 	<meta charset="utf-8">
 	<meta name ="viewport"content="width=device-width, initial-scale=1">
 	<title>Portfolio</title>
-	<link rel="shortcut icon" type="image/ico" href="icon.ico">
+	<link rel="shortcut icon" type="image/ico" href="images&icons/icon.ico">
 	<link href="https://fonts.googleapis.com/css2?family=Oswald&family=Raleway:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 
 	<link id="theme" rel="stylesheet" href="light-theme.css">
 	
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA==" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+
+	
 	<script>
-		//for nightmode/lightmode switching....
+		
+		
 
-	document.addEventListener('DOMContentLoaded', () => {
 
-    const themeStylesheet = document.getElementById('theme');
-    const themeToggle = document.getElementById('theme-toggle');
-    themeToggle.addEventListener('click', () => {
-        // if it's light -> go dark
-        if(themeStylesheet.href.includes('light')){
-            themeStylesheet.href = 'dark-theme.css';
-            themeToggle.innerText = 'Light';
-        } else {
-            // if it's dark -> go light
-            themeStylesheet.href = 'light-theme.css';
-            themeToggle.innerText = 'Dark';
-        }
-    })
+//for nightmode/lightmode switching....
 
-	//Get the button
+document.addEventListener('DOMContentLoaded', () => {
+
+const themeStylesheet = document.getElementById('theme');
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.addEventListener('click', () => {
+	// if it's light -> go dark
+	if(themeStylesheet.href.includes('light')){
+		themeStylesheet.href = 'dark-theme.css';
+		themeToggle.innerText = 'Light';
+	} else {
+		// if it's dark -> go light
+		themeStylesheet.href = 'light-theme.css';
+		themeToggle.innerText = 'Dark';
+	}
+})
+
+//Get the button
 var mybutton = document.getElementById("scrolltotop");
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
+if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+mybutton.style.display = "block";
+} else {
+mybutton.style.display = "none";
+}
 }
 
 // When the user clicks on the button, scroll to the top of the document
-$('#scrolltotop').on('click', ()=>{
-	document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-})
+		$('#scrolltotop').on('click', ()=>{
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
+		})
 
 
 
 })	
-		document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
-		//for nav links for mobile....
-		const linefornav = document.getElementById("linefornav");
-		const navlinks = document.getElementById("nav-links");
-		const links = document.getElementById("nav-links li");
+	//for nav links for mobile....
+	const linefornav = document.getElementById("linefornav");
+	const navlinks = document.getElementById("nav-links");
+	const links = document.getElementById("nav-links li");
+	const line1 = document.getElementById("line1");
+
+	linefornav.addEventListener('click', () => {
+		navlinks.classList.toggle("open");
+		linefornav.classList.toggle("cross");
 		
-
-		linefornav.addEventListener('click', () => {
-			navlinks.classList.toggle("open");
-		});
-		$('#nav-links li a').on('click' , ()=>{
-			$('#nav-links').toggleClass("open");
-		});
-
-
-
 	});
+
+	$('#nav-links li a').on('click' , ()=>{
+		$('#nav-links').toggleClass("open");
+		$(".linefornav").toggleClass("cross");
+	});
+
+
+});
+
+
+//adding animation effect to the page
+
+		$(document).ready(function(){
+    		$('.about-part1').waypoint(function(direction){
+     			 $('.about-part1').addClass('animate__fadeInRightBig')
+    		},{offset:'50%'})
+		});
+		  
+		$(document).ready(function(){
+    		$('.about-part2').waypoint(function(direction){
+     			 $('.about-part2').addClass('animate__fadeInLeftBig')
+    		},{offset:'50%'})
+		});
+		$(document).ready(function(){
+    		$('.skills-part1').waypoint(function(direction){
+     			 $('.skills-part1').addClass('animate__fadeInUp')
+    		},{offset:'50%'})
+		});
+		$(document).ready(function(){
+    		$('.skills-part2').waypoint(function(direction){
+     			 $('.skills-part2').addClass('animate__fadeInUp')
+    		},{offset:'50%'})
+		});
+		$(document).ready(function(){
+    		$('.fw-part1').waypoint(function(direction){
+     			 $('.fw-part1').addClass('animate__fadeInUp')
+    		},{offset:'50%'})
+		});
+		$(document).ready(function(){
+    		$('.fw-part2').waypoint(function(direction){
+     			 $('.fw-part2').addClass('animate__fadeInUp')
+    		},{offset:'50%'})
+		});
+		$(document).ready(function(){
+    		$('.port-part1').waypoint(function(direction){
+     			 $('.port-part1').addClass('animate__fadeInUp')
+    		},{offset:'50%'})
+		});
+		$(document).ready(function(){
+    		$('.port-part2').waypoint(function(direction){
+     			 $('.port-part2').addClass('animate__fadeInUp')
+    		},{offset:'50%'})
+		});
+		$(document).ready(function(){
+    		$('.cont-part1').waypoint(function(direction){
+     			 $('.cont-part1').addClass('animate__fadeInLeftBig')
+    		},{offset:'60%'})
+		});
+		$(document).ready(function(){
+    		$('.cont-part2').waypoint(function(direction){
+     			 $('.cont-part2').addClass('animate__fadeInRightBig')
+    		},{offset:'60%'})
+		});
+		$(document).ready(function(){
+    		$('.cv-part1').waypoint(function(direction){
+     			 $('.cv-part1').addClass('animate__fadeInDown')
+    		},{offset:'50%'})
+		});
+		$(document).ready(function(){
+    		$('.sm-part1').waypoint(function(direction){
+     			 $('.sm-part1').addClass('animate__bounceIn')
+    		},{offset:'80%'})
+		});
+		$(document).ready(function(){
+    		$('.sm-part2').waypoint(function(direction){
+     			 $('.sm-part2').addClass('animate__fadeInUp')
+    		},{offset:'90%'})
+		});
 
 
 	</script>
@@ -83,19 +170,20 @@ $('#scrolltotop').on('click', ()=>{
 </head>
 <body id="top">
 <!-- ********HEADER***************-->
-<!--<div class="header">-->
-	<!--<p>Mode : <button id="theme-toggle">Dark</button></p>
-	<h2><a id="logoicon" href="#top"><img style="width: 60px;height: 60px;" src="icon.ico" alt="Dnyaneshwar Sakhare Logo"></a></h2>-->
+
 	<nav>
 		<div class="linefornav" id="linefornav">
-			<div class="line"></div>
-			<div class="line"></div>
-			<div class="line"></div>
+		
+
+			<span></span>
+			<span></span>
+			<span></span>
+
 		</div>
 
 		<ul class="nav-links" id="nav-links">
 			<li><p>Mode : <button id="theme-toggle">Dark</button></p></li>
-	        <li><h2><a id="logoicon" href="#top"><img style="width: 60px;height: 60px;" src="icon.ico" alt="Dnyaneshwar Sakhare Logo"></a></h2></li>
+	        <li><h2><a id="logoicon" href="#top"><img style="width: 60px;height: 60px;" src="images&icons/icon.ico" alt="Dnyaneshwar Sakhare Logo"></a></h2></li>
 	        
 			<li><a href="#top"> Home</a></li>
 			<li><a href="#about"> About Me</a></li>
@@ -125,10 +213,10 @@ $('#scrolltotop').on('click', ()=>{
 	<div id="about" class="about">
 		<h3 class="title">About Me</h3>
 		<div id="two-cols">
-		<div class="about-image"><img style="border-radius: 50%;" src="DnyaneshwarSakhare1.jpg" alt="Dnyaneshwar sakhare image"></div>
-		<div class="about-bio">
+		<div class="about-image about-part1 animate__animated"><img style="border-radius: 50%;" src="images&icons/Dnyaneshwarsakhare.jpg" alt="Dnyaneshwar sakhare image"></div>
+		<div class="about-bio about-part2 animate__animated">
 			<p>
-				I'm Dnyaneshwar Sakhare & i'm a Student at Rit, Sangli. I have knowledge of Frontend technologies also i have started learning React js framework. I can create Databases with sql and also with NoSql Firebase. I know some Backend Technologies like node.js and trying to deploy real time projects. I have done certification course on Software Development Life Cycle and Digital Marketing. Other than this i really like to developing games using Unity 3D.
+				I'm Dnyaneshwar Sakhare & i'm a Student at Rit, Sangli. I have knowledge of Frontend technologies also i have started learning <b>React js</b> framework. I can create Databases with <b>sql</b> and also with <b>NoSql MongoDB</b>. I know some Backend Technologies like <b>Node.js</b> and trying to deploy real time projects. I have done certification course on <b>Software Development Life Cycle</b> and <b>Digital Marketing</b>. Other than this i really like to developing games using <b>Unity 3D</b>.
 			</p>
 		</div>
 				<p>&nbsp;</p>
@@ -137,30 +225,50 @@ $('#scrolltotop').on('click', ()=>{
 	<!-- ********Skills**************-->
 		<div id="Skills" class="Skills">
 			<h3 class="title">Skills</h3>
-				<p style="margin-bottom: 40px;">
-				Customer Service Representative with 8 years' experience. Extremely strong leadership skills. Excellent interpersonal skills. Have worked in two high-volume call centers. Trained in SalesForce.
+				<p class="skills-part1 animate__animated" style="margin-bottom: 40px;">
+				
+				Strong javascript skills and have experience with latest javascript frameworks like React js, Node js. I have good understanding of Data structures & Algorithms and Oop concepts with Java language. 
 			</p><hr>
-			<ul class="grid">
-				<li><i></i><h4 class="textskill">Front-End</h4><p>Interest in Developing Gui with Html, Css & Javascript</p></li>
-				<li><i></i><h4 class="textskill">Back-End</h4><p>Playing with Databases, Sql and Node.js</p></li>
-				<li><i></i><h4 class="textskill">SW-Dev</h4><p>With the Concepts of SDLC, Agile SD, Lean SD Concepts </p></li>
-				<li><i></i><h4 class="textskill">Game-Dev</h4><p>Making games using Unity 3D & C# is always inspires me</p></li>
+			<ul class="grid skills-part2 animate__animated">
+				<li><i></i><h4 class="textskill">Front-End</h4><p>Interested in Developing UI with Html, Css & Javascript</p></li>
+				<li><i></i><h4 class="textskill">Back-End</h4><p>Worked with Databases (Sql & NoSql) and used Node.js as a backend</p></li>
+				<li><i></i><h4 class="textskill">SW-Dev</h4><p>I know SDLC, Agile SD, Lean SD Concepts very well</p></li>
+				<li><i></i><h4 class="textskill">Game-Dev</h4><p>Learning to develope games using Unity 3D & C#</p></li>
 			</ul>
 		</div><hr>
-
-
+	<!--Frameworks worked with-->
+		<div class="framework">
+			<p class="fw-part1 animate__animated">Some technologies i have experience working with :</p><hr>
+			<div class="fwimg fw-part2 animate__animated">
+				<img class="fwf" src="framework png's/ht5.png" alt="html">
+				<img class="fwf" src="framework png's/css.png" alt="css">
+				<img class="fwf" src="data:image/png;base64,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" alt="react">
+				<img class="fwf" src="framework png's/node.png" alt="node js">
+				<img class="fwf" src="framework png's/express.png" alt="express js">
+				<img class="fwf" src="framework png's/mongodb.png" alt="MongoDB">
+				<img class="fwf" src="framework png's/js.png" alt="Javascript">
+				<img class="fwf" src="framework png's/unity.png" alt="unity3D">
+				<img class="fwf" src="framework png's/jquery.png" alt="jQuery">
+				<img class="fwf" src="framework png's/vs.png" alt="vs code">
+				<img class="fwf" src="framework png's/git.png" alt="github">
+			</div>
+		</div><hr>
 	<!-- *********Portfolio**************-->
 	<div id="portfolio" class="portfolio">
 		<h3 class="title">Portfolio</h3>
-		<p>
+		<p class="port-part1 animate__animated">
 			Take a look at my Featured works.
 		</p>
 		<hr>
-		<ul  style="justify-content: center;" class="grid">
-			<li class="small" style="background-image: url('about.jpg');position: relative;"><a style="position: absolute;top: 90%;left: 50%;transform: translate(-50%, -50%);" href="#about" class="btn" id="eeee">Open</a></li>
-			<li class="large" style="background-image: url('bgr.jpg');position: relative;"><a style="position: absolute;top: 90%;left: 50%;transform: translate(-50%, -50%);" href="#about" class="btn" id="eeee">Open</a></li>
-			<li class="large" style="background-image: url('bgr.jpg');position: relative;"><a style="position: absolute;top: 90%;left: 50%;transform: translate(-50%, -50%);" href="#about" class="btn" id="eeee">Open</a></li>
-			<li class="small" style="background-image: url('about.jpg');position: relative;"><a style="position: absolute;top: 90%;left: 50%;transform: translate(-50%, -50%);" href="#about" class="btn" id="eeee">Open</a></li>
+		<ul  style="justify-content: center;" class="grid port-part2 animate__animated">
+			<li class="large" style="background-image: url('images&icons/about.jpg');"><p id="po">Url-Shortner<br>its convert big complex url into short url</p><p id="lo">Url-Shortner<br>An URL shortener reduces the length of your URL, in order to make the address something that's easier to remember and track. So its very easy to share url after shortening.
+			</p><a href="#about" class="btn" id="btnopen">Open</a></li>
+
+			<li class="large" style="background-image: url('images&icons/bgr.jpg');"><p id="po">Globe-3D Three.js<br>Globe 3D with Covid-19 Cases</p><p id="lo">Globe-3D Three.js<br>orem fa rfv rve rv vwe rv w er vw er v wr v wr v wr vw r v  wer vwe rv e rv rg we r wer  r v rb rtb rtb  wrt b rt b t b</p><a id="btnopen" href="#about" class="btn">Open</a></li>
+
+			<li class="large" style="background-image: url('images&icons/bgr.jpg');"><p id="po">Url-Shortner<br>its convert big url into short url</p><p id="lo">Url-Shortner<br>orem fa rfv rve rv vwe rv w er vw er v wr v wr v wr vw r v  wer vwe rv e rv rg we r wer  r v rb rtb rtb  wrt b rt b t b</p><a href="#about" class="btn" id="btnopen">Open</a></li>
+
+			<li class="large" style="background-image: url('images&icons/about.jpg');"><p id="po">Url-Shortner<br>its convert big url into short url</p><p id="lo">Url-Shortner<br>orem fa rfv rve rv vwe rv w er vw er v wr v wr v wr vw r v  wer vwe rv e rv rg we r wer  r v rb rtb rtb  wrt b rt b t b</p><a href="#about" class="btn" id="btnopen">Open</a></li>
 		</ul>
 	</div>
 	<hr>
@@ -169,51 +277,32 @@ $('#scrolltotop').on('click', ()=>{
 	<div><h3 class="title">Contact Me</h3></div>
 	<div id="contact">
 			<ul class="grid">
-				<li><i style="font-size: 30px;color:  #2196f3;" class="fa fa-location-arrow" aria-hidden="true"></i><br><br><p>Barsh road, MIDC<br>
+				<li class="cont-part1 animate__animated"><i style="font-size: 30px;color:  #2196f3;" class="fa fa-location-arrow" aria-hidden="true"></i><br><br><p>Barsh road, MIDC<br>
 				Latur, 413512 MH<br>
 				India.</p></li>
-				<li><i style="font-size: 30px;color:  #2196f3;" class="fa fa-envelope-open"></i><br><br><p>dnyaneshwarsakhare22@gmail.com</p></li>
+				<li class="cont-part2 animate__animated"><i style="font-size: 30px;color:  #2196f3;" class="fa fa-envelope-open"></i><br><br><p>dnyaneshwarsakhare22@gmail.com</p></li>
 			</ul>
 	</div><hr>
 
 
-
-
-
-	<!--<div id="contact">
-		<h3 class="title">Contact Me</h3>
-		<section style="text-align: center;" class="flexbox-section">
-			<p>
-				<i style="font-size: 30px;color:  #2196f3;" class="fa fa-location-arrow" aria-hidden="true"></i>
-			</p>
-			<br>
-			<p>
-				Barsh road, MIDC<br>
-				Latur, 413512 MH<br>
-				India.
-			</p>
-		</section>
-	</div><hr>-->
-
-
 	<!-- *********FOOTER**************-->
-	<div style="text-align: center;">
-		<a href="Dnyaneshwar_Sakhare_CV.pdf" download="CV" target="_blank" class="btn" id="cv">Download CV</a>
+	<div class="cv-part1 animate__animated" style="text-align: center;">
+		<a href="Dnyaneshwar_Sakhare_CV.pdf" download="Dnyaneshwar_Sakhare-CV" target="_blank" class="btn cv-part1 animate__animated" id="cv">Download CV</a>
 	</div>
 
 	<hr>
 	<!-- *********FOOTER**************-->
 	<footer id="social-media">
-		<ul>
+		<ul class="sm-part1 animate__animated">
 			<li><a href="https://twitter.com/dnyaneshwar_s22" target="_blank"><i class="fab fa-twitter"></i></a></li>
 			<li><a href="https://www.instagram.com/dnyaneshwar_s22/" target="_blank"><i class="fab fa-instagram"></i></a></li>
 			<li><a href="https://in.linkedin.com/in/dnyaneshwar-sakhare" target="_blank"><i class="fab fa-linkedin"></i></a></li>
 			<li><a href="https://github.com/Dnyaneshwarsakhare/" target="_blank"><i class="fab fa-github"></i></a></li>
 			<li><a href="mailto:dnyaneshwarsakhare22@gmail.com?subject=Hello, I'm ...&body=I have a job for you...." target="_blank"><i class="far fa-envelope"></i></a></li>
 		</ul>
-		<p>Thank you for visiting !</p>
-		<p>&ldquo; Believe In Yourself &rdquo;</p>
-		<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Made with <span style="color: red"class="heart">❤</span> by Dnyaneshwar Sakhare </p>	
+		<p class="sm-part2 animate__animated">Thank you for visiting !</p>
+		<p class="sm-part2 animate__animated">&ldquo; Believe In Yourself &rdquo;</p>
+		<p class="sm-part2 animate__animated">Copyright &copy; <script>document.write(new Date().getFullYear());</script> Made with <span style="color: red"class="heart">❤</span> by Dnyaneshwar Sakhare </p>	
 	</footer>
 
 </body>
