@@ -1,0 +1,42 @@
+body{
+      font-family: 'Poppins' , sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .loader{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: #000;
+    }
+    section{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 99999;
+      height: 100vh;
+      background: #fff;
+      pointer-events: none;
+      animation: fadeout 0.5s linear forwards;
+      animation-delay: 1.25s;
+    }
+    @keyframes fadeout{
+      0%{
+        opacity: 1;
+      }
+      100%{
+        opacity: 0;
+      }
+    }
+    .count{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      font-size: 18vw;
+      color: #fff;
+      font-weight: 800;
+      mix-blend-mode: difference;
+    }

@@ -21,11 +21,25 @@
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
 
+	<link rel="stylesheet" type="text/css" href="loader.css">
+
+	<style type="text/css">
 	
+	
+	</style>
 	<script>
 		
-		
-
+		//adding preloader css animation
+		var count=0;
+	      var counter = setInterval(() => {
+	        if (count < 101) {
+	          $('.count').text(count + '%');
+	          $('.loader').css('width',count + '%');
+	          count ++
+	        }else{
+	          clearInterval(counter)
+	        }
+	      });
 
 //for nightmode/lightmode switching....
 
@@ -92,9 +106,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //adding animation effect to the page
-
 		$(document).ready(function(){
-    		$('.about-part1').waypoint(function(direction){
+    		$('.heading-part1').waypoint(function(direction){
+     			 $('.heading-part1').addClass('animate__fadeInDown')
+    		},{offset:'100%'})
+		});
+		$(document).ready(function(){
+    		$('.heading-part2').waypoint(function(direction){
+     			 $('.heading-part2').addClass('animate__fadeInUp')
+    		},{offset:'100%'})
+		});
+		$(document).ready(function(){
+    		$('.knowmore').waypoint(function(direction){
+     			 $('.knowmore').addClass('animate__fadeIn')
+    		},{offset:'100%'})
+		});
+		$(document).ready(function(){
+    		$('.about-part1').waypoint((direction)=>{
      			 $('.about-part1').addClass('animate__fadeInRightBig')
     		},{offset:'50%'})
 		});
@@ -102,6 +130,21 @@ document.addEventListener('DOMContentLoaded', () => {
 		$(document).ready(function(){
     		$('.about-part2').waypoint(function(direction){
      			 $('.about-part2').addClass('animate__fadeInLeftBig')
+    		},{offset:'50%'})
+		});
+		$(document).ready(function(){
+    		$('.tl-part1').waypoint(function(direction){
+     			 $('.tl-part1').addClass('animate__fadeInLeft')
+    		},{offset:'50%'})
+		});
+		$(document).ready(function(){
+    		$('.tl-partp').waypoint(function(direction){
+     			 $('.tl-partp').addClass('animate__fadeInUp')
+    		},{offset:'50%'})
+		});
+		$(document).ready(function(){
+    		$('.tl-part2').waypoint(function(direction){
+     			 $('.tl-part2').addClass('animate__fadeInRight')
     		},{offset:'50%'})
 		});
 		$(document).ready(function(){
@@ -161,6 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 
 
+
 	</script>
 	
 	<style>
@@ -170,6 +214,15 @@ document.addEventListener('DOMContentLoaded', () => {
 </head>
 <body id="top">
 <!-- ********HEADER***************-->
+	
+	<div class="wrapper">
+	    <section>
+	      <div class="loader"></div>
+	      <div class="count"></div>
+	    </section>
+	</div>
+	
+  	
 
 	<nav>
 		<div class="linefornav" id="linefornav">
@@ -201,9 +254,9 @@ document.addEventListener('DOMContentLoaded', () => {
 <!-- ********HOMEPAGE***************-->
 	<div id="hero">
 		<div class="background-image"></div>
-		<h1>Hello, I'm a Software Developer</h1>
-		<h3>I love playing with Html, Css and Javascript with programming knowledge of C, C++, Java & more.</h3>
-		<a href="#about" style="font-family: 'Josefin Sans', sans-serif;" class="btn">Know More</a>
+		<h1 class="heading-part1 animate__animated">Hello, I'm a Software Developer</h1>
+		<h3 class="heading-part2 animate__animated">I love playing with Html, Css and Javascript with programming knowledge of C, C++, Java & more.</h3>
+		<a href="#about" style="font-family: 'Josefin Sans', sans-serif;" class="btn knowmore animate__animated ">Know More</a>
 		
 		<p id="scrolltotop" title="Go to top">Scroll to Top</p>		
 		
@@ -213,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	<div id="about" class="about">
 		<h3 class="title">About Me</h3>
 		<div id="two-cols">
-		<div class="about-image about-part1 animate__animated"><img style="border-radius: 50%;" src="images&icons/Dnyaneshwarsakhare.jpg" alt="Dnyaneshwar sakhare image"></div>
+		<div class="about-image about-part1 animate__animated"><img style="border-radius: 50%;" src="images&icons/DnyaneshwarSakhare.jpg" alt="Dnyaneshwar sakhare image"></div>
 		<div class="about-bio about-part2 animate__animated">
 			<p>
 				I'm Dnyaneshwar Sakhare & i'm a Student at Rit, Sangli. I have knowledge of Frontend technologies also i have started learning <b>React js</b> framework. I can create Databases with <b>sql</b> and also with <b>NoSql MongoDB</b>. I know some Backend Technologies like <b>Node.js</b> and trying to deploy real time projects. I have done certification course on <b>Software Development Life Cycle</b> and <b>Digital Marketing</b>. Other than this i really like to developing games using <b>Unity 3D</b>.
@@ -222,6 +275,31 @@ document.addEventListener('DOMContentLoaded', () => {
 				<p>&nbsp;</p>
 	</div><hr>
 	</div>
+	<!------*******Educational Timeline********---------->
+	<p class="tl-partp animate__animated" style="text-align: center; font-size: 20px;font-family: 'Josefin Sans', sans-serif;">Education Timeline</p><hr>
+	<div class="timeline">
+	  <div class="container left tl-part1 animate__animated">
+	    <div class="content">
+	      <h2>2017 - 2021</h2>
+	      <h3>B.Tech CSE</h3>
+	      <p><b>CPI : 7.01</b><br>Rajarambapu institute of technology ,Islmapur,Sangli.</p>
+	    </div>
+	  </div>
+	  <div class="container right tl-part2 animate__animated">
+	    <div class="content">
+	      <h2>2016 - 2017</h2>
+	      <h3>12th - HSC</h3>
+	      <p><b>Percentage : 76.75%</b><br>Rajarshi shahu mahavidyalay, Latur.</p>
+	    </div>
+	  </div>
+	  <div class="container left tl-part1 animate__animated">
+	    <div class="content">
+	      <h2>2014 - 2015</h2>
+	      <h3>10th - SSC</h3>
+	      <p><b>Percentage : 92.00%</b><br>Vidyavikas vidyalay, Latur.</p>
+	    </div>
+	  </div>
+	</div><hr>
 	<!-- ********Skills**************-->
 		<div id="Skills" class="Skills">
 			<h3 class="title">Skills</h3>
@@ -274,7 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	<hr>
 
 	<!-- *********CONTACT**************-->
-	<div><h3 class="title">Contact Me</h3></div>
+	<div><h3 class="title">Contact Me</h3></div><hr>
 	<div id="contact">
 			<ul class="grid">
 				<li class="cont-part1 animate__animated"><i style="font-size: 30px;color:  #2196f3;" class="fa fa-location-arrow" aria-hidden="true"></i><br><br><p>Barsh road, MIDC<br>
@@ -304,6 +382,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		<p class="sm-part2 animate__animated">&ldquo; Believe In Yourself &rdquo;</p>
 		<p class="sm-part2 animate__animated">Copyright &copy; <script>document.write(new Date().getFullYear());</script> Made with <span style="color: red"class="heart">❤</span> by Dnyaneshwar Sakhare </p>	
 	</footer>
+
 
 </body>
 </html>
