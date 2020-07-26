@@ -653,6 +653,7 @@ font-family: 'Josefin Sans', sans-serif;
 /*******Frameworks*******/
 .framework{
 	padding: 10px;
+	font-family: 'Josefin Sans', sans-serif;
 	margin: 10px;
 	text-align: center;
 	font-size: 20px;
