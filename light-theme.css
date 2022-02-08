@@ -7,6 +7,7 @@
 .heading-part1{
 	opacity: 0;
 	animation-delay: 1.5s;
+        transform: scale(2);
 }
 .heading-part2{
 	opacity: 0;
@@ -16,6 +17,7 @@
 }
 .heading-part1 .animate__{
 	opacity: 1;
+        transform: scale(1);
 }
 .heading-part2 .animate__{
 	opacity: 1;
