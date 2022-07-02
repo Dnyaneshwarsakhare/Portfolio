@@ -44,10 +44,6 @@
 	        }
 	      });
 
-//for nightmode/lightmode switching....
-
-document.addEventListener('DOMContentLoaded', () => {
-
 ////start// For automatically switching between dark & light theme on basis of system color scheme////
 const themeStylesheet = document.getElementById('theme');
 const themeToggle = document.getElementById('theme-toggle');
@@ -61,6 +57,11 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
     }
 
 ///End////
+//for nightmode/lightmode switching....
+
+document.addEventListener('DOMContentLoaded', () => {
+
+
 
 const themeStylesheet = document.getElementById('theme');
 const themeToggle = document.getElementById('theme-toggle');
