@@ -50,10 +50,10 @@ const themeToggle = document.getElementById('theme-toggle');
 
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       themeStylesheet.href = 'dark-theme.css';
-      themeToggle.innerText = 'Dark';
+      themeToggle.innerText = 'Light';
     } else {
       themeStylesheet.href = 'light-theme.css';
-      themeToggle.innerText = 'Light';
+      themeToggle.innerText = 'Dark';
     }
 
 ///End////
