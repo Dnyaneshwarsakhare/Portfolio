@@ -915,3 +915,10 @@ footer ul li a{
 .sm-part2 .animate__{
 	opacity: 1;
 }
+
+/***********linkedin badge************************/
+.badge-base{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
